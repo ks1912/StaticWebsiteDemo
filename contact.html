@@ -56,6 +56,23 @@
             }
 
         </style>
+        <script type = "text/javascript">
+            function validate() 
+            {
+                if( document.myForm.fullname.value == "" ) 
+                {
+                    alert( "Please provide your full name!" );
+                    document.myForm.fullname.focus() ;
+                    return false;
+                }
+                if( document.myForm.email.value == "" ) 
+                {
+                    alert( "Please provide your Email!" );
+                    document.myForm.email.focus() ;
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="topnav">
@@ -74,12 +91,12 @@
         </div>
         <div class="pe_container">
             <h1 style="text-align: center;">Contact Us</h1><br/>
-            <form action="index.html">
+            <form name="myForm" onsubmit = "return(validate());">
               <label>First Name</label>
-              <input type="text" id="fname" name="fullname" placeholder="Full name" required>
+              <input type="text" id="fname" name="fullname" placeholder="Full name">
 
               <label >Enter your email:</label>
-              <input type="text" id="email" name="email" placeholder="Enter your email" required>
+              <input type="text" id="email" name="email" placeholder="Enter your email">
 
           
               <label>Issues</label>
