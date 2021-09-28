@@ -71,6 +71,12 @@
                     document.myForm.email.focus() ;
                     return false;
                 }
+                if( document.myForm.pnum.value == "" ) 
+                {
+                    alert( "Please provide your Email!" );
+                    document.myForm.pnum.focus() ;
+                    return false;
+                }
             }
         </script>
     </head>
@@ -97,10 +103,14 @@
 
               <label >Enter your email:</label>
               <input type="text" id="email" name="email" placeholder="Enter your email">
+                
+               <label >Enter phone number:</label>
+              <input type="number" id="pnum" name="pnum" placeholder="Enter phone number">
 
           
               <label>Issues</label>
               <select id="issue" name="issue">
+                <option value = "-1" selected>[choose your option]</option>
                 <option>Service related issues</option>
                 <option>Management related issues</option>
                 <option>Other problem</option>
